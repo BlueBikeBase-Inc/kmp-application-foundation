@@ -21,5 +21,7 @@ dependencyResolutionManagement {
 }
 
 
-include(":core")
-// include(":utils")
+include(
+    ":core",
+    ":ui",
+)

@@ -4,6 +4,7 @@ kotlinxDatetime = "0.8.0"
 kotlinxSerializationJSON = "1.11.0"
 kotlinxCoroutines = "1.10.2"
 kotlinxBrowser = "0.5.0"
+kotlinxHtmlWasmJs = "0.12.0"
 
 jetbrainsCompose = "1.12.0"
 androidKmpLibrary = "9.1.0"
@@ -14,6 +15,7 @@ kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJSON" }
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-browswer = { group = "org.jetbrains.kotlinx", name = "kotlinx-browser", version.ref = "kotlinxBrowser" }
+kotlinx-html-wasm-js = { group = "org.jetbrains.kotlinx", name = "kotlinx-html-wasm-js", version.ref = "kotlinxHtmlWasmJs" }
 
 [bundles]
 kotlinx-ecosystem = ["kotlinx-datetime", "kotlinx-serialization", "kotlinx-coroutines"]

@@ -1,4 +1,4 @@
-package org.b3.foundation.core
+package org.b3.foundation.runtime
 
 fun interface Startable {
     fun onStart()

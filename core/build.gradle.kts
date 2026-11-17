@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.kmp.library)
 }
 
 kotlin {
@@ -12,6 +13,11 @@ kotlin {
     iosSimulatorArm64()
 
     jvm()
+    android {
+        namespace = "org.b3.foundation.core"
+        compileSdk = 37
+        minSdk = 24
+    }
 
     sourceSets {
 
