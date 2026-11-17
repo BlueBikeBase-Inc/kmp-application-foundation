@@ -4,7 +4,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import org.b3.foundation.ui.runtime.Lifecycle
 
-object UiApplication : Lifecycle {
+object Application : Lifecycle {
     @Composable
     override fun Content() {
         Text("WasmJsUiApplication.Content")

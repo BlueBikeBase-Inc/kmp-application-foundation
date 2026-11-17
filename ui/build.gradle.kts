@@ -32,6 +32,10 @@ kotlin {
 
             api(project(":core"))
         }
+        jvmMain.dependencies {
+            implementation(compose.desktop.common)
+            // implementation(libs.compose.desktop)
+        }
         wasmJsMain.dependencies {
             implementation(libs.kotlinx.browswer)
             implementation(libs.kotlinx.html.wasm.js)
