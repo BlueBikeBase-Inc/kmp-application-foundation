@@ -38,7 +38,6 @@ kotlin {
         }
         wasmJsMain.dependencies {
             implementation(libs.kotlinx.browswer)
-            implementation(libs.kotlinx.html.wasm.js)
         }
         wasmJsTest.dependencies {
             implementation(kotlin("test-wasm-js"))

@@ -1,4 +1,4 @@
-package org.b3.foundation.wasm.template
+package org.b3.foundation.plugin.web.template
 
 data class WebPageConfig(
     val title: String,

@@ -1,6 +1,6 @@
-rootProject.name = "foundation"
-
 pluginManagement {
+    includeBuild("plugins/web")
+
     repositories {
         google()
         mavenCentral()
@@ -20,8 +20,12 @@ dependencyResolutionManagement {
     }
 }
 
+rootProject.name = "foundation"
 
 include(
     ":core",
     ":ui",
+
+    ":samples:web-ui",
+    ":samples:desktop-ui",
 )
