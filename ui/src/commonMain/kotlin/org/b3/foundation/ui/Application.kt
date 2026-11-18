@@ -7,22 +7,22 @@ import org.b3.foundation.ui.runtime.Lifecycle
 object Application : Lifecycle {
     @Composable
     override fun Content() {
-        Text("WasmJsUiApplication.Content")
+        Text("org.b3.foundation.ui.Application.Content()")
     }
 
     override fun onCreate() {
-        println("WasmJsUiApplication.onCreate()")
+        println("org.b3.foundation.ui.Application.onCreate()")
     }
 
     override fun onStart() {
-        println("WasmJsUiApplication.onStart()")
+        println("org.b3.foundation.ui.Application.onStart()")
     }
 
     override fun onStop() {
-        println("WasmJsUiApplication.onStop()")
+        println("org.b3.foundation.ui.Application.onStop()")
     }
 
     override fun onDestroy() {
-        println("WasmJsUiApplication.onDestroy()")
+        println("org.b3.foundation.ui.Application.onDestroy()")
     }
 }

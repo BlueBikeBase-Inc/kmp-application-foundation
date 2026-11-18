@@ -2,8 +2,8 @@ package org.b3.foundation.plugin.web
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import kotlin.jvm.java
-
 
 class B3WebPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -16,7 +16,7 @@ class B3WebPlugin : Plugin<Project> {
         extension.language.convention("ja")
         extension.entryScript.convention("${target.name}.js")
 
-        target.tasks.register(
+        val generateIndexHtml = target.tasks.register(
             "generateIndexHtml",
             GenerateTemplateTask::class.java,
         ) { task ->
@@ -32,6 +32,20 @@ class B3WebPlugin : Plugin<Project> {
                     "generated/org/b3/foundation/web"
                 )
             )
+        }
+
+        target.pluginManager.withPlugin(
+            "org.jetbrains.kotlin.multiplatform",
+        ) {
+            val kotlin = target.extensions.getByType(
+                KotlinMultiplatformExtension::class.java
+            )
+
+            kotlin.sourceSets.matching {
+                it.name == "wasmJsMain"
+            }.configureEach { sourceSets ->
+                sourceSets.resources.srcDir(generateIndexHtml)
+            }
         }
     }
 }

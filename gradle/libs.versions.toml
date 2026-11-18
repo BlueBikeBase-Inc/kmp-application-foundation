@@ -9,8 +9,6 @@ kotlinxHtmlWasmJs = "0.12.0"
 jetbrainsCompose = "1.12.0"
 androidKmpLibrary = "9.1.0"
 
-composeMultiplatform = "1.12.0"
-
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
@@ -19,10 +17,8 @@ kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core",
 kotlinx-browswer = { group = "org.jetbrains.kotlinx", name = "kotlinx-browser", version.ref = "kotlinxBrowser" }
 kotlinx-html = { group = "org.jetbrains.kotlinx", name = "kotlinx-html", version.ref = "kotlinxHtmlWasmJs" }
 
-compose-desktop = { module = "org.jetbrains.compose.desktop:desktop-jvm-all", version.ref = "composeMultiplatform" }
-
 [bundles]
-kotlinx-ecosystem = ["kotlinx-datetime", "kotlinx-serialization", "kotlinx-coroutines"]
+kotlinx-ecosystem = ["kotlinx-datetime", "kotlinx-serialization", "kotlinx-coroutines", "kotlinx-browswer", "kotlinx-html"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

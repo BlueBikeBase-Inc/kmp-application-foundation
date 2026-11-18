@@ -2,9 +2,10 @@ package org.b3.foundation.wasm
 
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.window.ComposeViewport
-import org.b3.foundation.ui.runtime.Lifecycle
 import org.b3.foundation.ui.Application
 import org.b3.foundation.ui.LifecycleController
+import org.b3.foundation.ui.runtime.BindLifecycle
+import org.b3.foundation.ui.runtime.Lifecycle
 
 object ApplicationMain {
     @OptIn(ExperimentalComposeUiApi::class)
@@ -15,10 +16,11 @@ object ApplicationMain {
 
         ComposeViewport(
             viewportContainerId = VIEWPORT_CONTAINER_ID,
-            content = application::Content,
+            content = {
+                BindLifecycle(this@run)
+                application.Content()
+            },
         )
-
-        start()
     }
 
     private const val VIEWPORT_CONTAINER_ID = "ui-root"

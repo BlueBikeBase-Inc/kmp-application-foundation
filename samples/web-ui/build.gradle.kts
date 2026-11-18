@@ -2,6 +2,8 @@ import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.kotlin.plugin.compose)
+    alias(libs.plugins.jetbrains.compose)
 
     id("org.b3.foundation.plugin.web")
 }
@@ -22,7 +24,10 @@ kotlin {
 
     sourceSets {
         wasmJsMain.dependencies {
-            api(project(":ui"))
+            implementation(compose.runtime)
+            implementation(compose.ui)
+
+            implementation(project(":ui"))
         }
     }
 }

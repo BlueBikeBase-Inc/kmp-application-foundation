@@ -9,7 +9,9 @@ plugins {
 
 kotlin {
     @OptIn(ExperimentalWasmDsl::class)
-    wasmJs { browser() }
+    wasmJs {
+        browser()
+    }
 
     iosArm64()
     iosSimulatorArm64()
@@ -34,7 +36,6 @@ kotlin {
         }
         jvmMain.dependencies {
             implementation(compose.desktop.common)
-            // implementation(libs.compose.desktop)
         }
         wasmJsMain.dependencies {
             implementation(libs.kotlinx.browswer)

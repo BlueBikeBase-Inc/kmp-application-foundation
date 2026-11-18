@@ -4,6 +4,7 @@ plugins {
 }
 
 dependencies {
+    compileOnly(libs.kotlin.gradle.plugin)
     implementation(libs.kotlinx.html)
 
     testImplementation(kotlin("test"))

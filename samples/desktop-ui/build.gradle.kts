@@ -1,7 +1,16 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.plugin.compose)
+    alias(libs.plugins.jetbrains.compose)
 }
 
 dependencies {
-    api(project(":ui"))
+    implementation(compose.desktop.currentOs)
+    implementation(project(":ui"))
+}
+
+compose.desktop {
+    application {
+        mainClass = "org.b3.foundation.jvm.ApplicationMainKt"
+    }
 }
