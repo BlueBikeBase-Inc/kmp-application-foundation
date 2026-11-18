@@ -28,4 +28,5 @@ include(
 
     ":samples:web-ui",
     ":samples:desktop-ui",
+    ":samples:android",
 )

@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/plugins/web" />
             <option value="$PROJECT_DIR$/samples" />
+            <option value="$PROJECT_DIR$/samples/android" />
             <option value="$PROJECT_DIR$/samples/desktop-ui" />
             <option value="$PROJECT_DIR$/samples/web-ui" />
             <option value="$PROJECT_DIR$/ui" />
