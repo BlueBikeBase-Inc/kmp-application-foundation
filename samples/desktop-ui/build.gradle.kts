@@ -5,7 +5,9 @@ plugins {
 }
 
 dependencies {
+    implementation(compose.material3)
     implementation(compose.desktop.currentOs)
+
     implementation(project(":ui"))
 }
 

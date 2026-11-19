@@ -2,23 +2,21 @@ package org.b3.foundation.ui.jvm
 
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
-import androidx.compose.ui.window.rememberWindowState
-import org.b3.foundation.ui.Application
-import org.b3.foundation.runtime.LifecycleController
-import org.b3.foundation.ui.runtime.BindLifecycle
 import androidx.compose.ui.window.application
+import androidx.compose.ui.window.rememberWindowState
+import org.b3.foundation.runtime.LifecycleController
+import org.b3.foundation.ui.UiApplication
+import org.b3.foundation.ui.runtime.BindLifecycle
 
 object ApplicationMain {
     @JvmStatic
-    @JvmOverloads
-    fun main(
-        args: Array<String>,
-        application: Application = Application,
-    ) = LifecycleController(application).run {
-        create()
+    fun main(args: Array<String>) {
+        val controller = LifecycleController(UiApplication)
 
         try {
-            application {
+            controller.create()
+
+            application(exitProcessOnExit = false) {
                 Window(
                     onCloseRequest = ::exitApplication,
                     title = "Foundation Desktop",
@@ -27,13 +25,13 @@ object ApplicationMain {
                         height = 800.dp,
                     ),
                     content = {
-                        BindLifecycle(this@run)
-                        application.Content()
+                        BindLifecycle(controller)
+                        UiApplication.Content()
                     },
                 )
             }
         } finally {
-            destroy()
+            controller.destroy()
         }
     }
 }
