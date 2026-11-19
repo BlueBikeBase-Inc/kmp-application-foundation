@@ -2,11 +2,11 @@ package org.b3.foundation.ui
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import org.b3.foundation.ui.runtime.Lifecycle
+import org.b3.foundation.runtime.Lifecycle
 
 object Application : Lifecycle {
     @Composable
-    override fun Content() {
+    fun Content() {
         Text("org.b3.foundation.ui.Application.Content()")
     }
 

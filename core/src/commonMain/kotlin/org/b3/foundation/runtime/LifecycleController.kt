@@ -1,7 +1,4 @@
-package org.b3.foundation.ui
-
-import org.b3.foundation.runtime.LifecycleState
-import org.b3.foundation.ui.runtime.Lifecycle
+package org.b3.foundation.runtime
 
 class LifecycleController(
     private val application: Lifecycle,

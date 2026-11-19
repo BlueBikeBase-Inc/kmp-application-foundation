@@ -1,16 +1,15 @@
-package org.b3.foundation.wasm
+package org.b3.foundation.ui.wasm
 
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.window.ComposeViewport
 import org.b3.foundation.ui.Application
-import org.b3.foundation.ui.LifecycleController
+import org.b3.foundation.runtime.LifecycleController
 import org.b3.foundation.ui.runtime.BindLifecycle
-import org.b3.foundation.ui.runtime.Lifecycle
 
 object ApplicationMain {
     @OptIn(ExperimentalComposeUiApi::class)
     fun main(
-        application: Lifecycle = Application,
+        application: Application = Application,
     ) = LifecycleController(application).run {
         create()
 

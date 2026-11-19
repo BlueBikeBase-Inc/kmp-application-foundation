@@ -1,4 +1,4 @@
-package org.b3.foundation.wasm.util
+package org.b3.foundation.ui.wasm.util
 
 @OptIn(ExperimentalWasmJsInterop::class)
 internal fun isPageVisible(): Boolean =

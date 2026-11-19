@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.plugin.compose)
+    alias(libs.plugins.jetbrains.compose)
 
     id("com.android.application")
 }
@@ -9,7 +10,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.b3.foundation.samples.android"
+        applicationId = "org.b3.foundation.samples.android"
         minSdk = 24
         targetSdk = 37
 
@@ -24,6 +25,9 @@ android {
 
 dependencies {
     implementation(libs.androidx.activity.compose)
+
+    implementation(compose.runtime)
+    implementation(compose.ui)
 
     implementation(project(":ui"))
 }
