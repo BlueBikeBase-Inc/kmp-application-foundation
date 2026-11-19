@@ -11,10 +11,19 @@ class UiConfiguration {
         rootFactory = factory
     }
 
-    internal fun createRoot(): View =
-        checkNotNull(rootFactory) {
+    fun wrapRoot(factory: (View) -> View) {
+        rootLayers += factory
+    }
+
+    internal fun createRoot(): View {
+        val root = checkNotNull(rootFactory) {
             "Root View is not Configured"
         }.invoke()
 
+        return rootLayers.asReversed()
+            .fold(root) { child, wrap -> wrap.invoke(child) }
+    }
+
     private var rootFactory: (() -> View)? = null
+    private val rootLayers = mutableListOf<(View) -> View>()
 }
