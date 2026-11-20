@@ -1,9 +1,13 @@
 package org.b3.foundation.samples.desktop
 
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import org.b3.foundation.application.apply
 import org.b3.foundation.localization.Localization
 import org.b3.foundation.localization.LocalizationState
@@ -27,8 +31,13 @@ fun UiApplication.configureView() {
         localization(language = LocalizationState.JA)
         theme(colorScheme = darkColorScheme())
         surface {
+            modifier = Modifier
+                .fillMaxSize()
+
             color = Color.Black
             contentColor = Color.Cyan
+
+            isCentered = true
         }
 
         view {

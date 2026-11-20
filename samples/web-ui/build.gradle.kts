@@ -9,7 +9,7 @@ plugins {
 }
 
 val genHtmlTemplate = tasks.named("generateIndexHtml")
-val webEntryScript = "app.js"
+val webEntryScript = "sample-app.js"
 
 kotlin {
     @OptIn(ExperimentalWasmDsl::class)
@@ -34,7 +34,7 @@ kotlin {
 }
 
 b3Web {
-    title.set("Web UI")
-    containerId.set("ui-root")
+    title.set("Sample Web UI")
+    containerId.set("sample-ui-root")
     entryScript.set(webEntryScript)
 }

@@ -1,8 +1,12 @@
 package org.b3.foundation.ui
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ColorScheme
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import org.b3.foundation.localization.Localization
 import org.b3.foundation.localization.LocalizationState
+import org.b3.foundation.ui.container.BoxContainer
 import org.b3.foundation.ui.localization.LocalizationLayer
 import org.b3.foundation.ui.surface.SurfaceConfiguration
 import org.b3.foundation.ui.surface.SurfaceLayer
@@ -38,8 +42,16 @@ fun UiConfiguration.surface(
         .apply(configure)
 
     layer(ViewHierarchy.SURFACE) { child ->
+        val content = if (configuration.isCentered)
+            BoxContainer(
+                child = child,
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center,
+            )
+        else child
+
         SurfaceLayer(
-            child = child,
+            child = content,
             configuration = configuration,
         )
     }
