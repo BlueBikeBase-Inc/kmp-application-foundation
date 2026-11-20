@@ -7,7 +7,7 @@ import org.b3.foundation.ui.view.View
 import org.b3.foundation.ui.view.ViewLayer
 
 class LocalizationLayer(
-    override val child: View,
+    override val children: List<View>,
     private val localization: LocalizationState,
 ) : ViewLayer {
     @Composable

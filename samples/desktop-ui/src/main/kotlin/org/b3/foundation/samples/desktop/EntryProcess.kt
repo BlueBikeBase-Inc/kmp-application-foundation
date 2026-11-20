@@ -29,12 +29,11 @@ fun UiApplication.configureView() {
 
     apply(UI) {
         localization(language = LocalizationState.JA)
-        theme(colorScheme = darkColorScheme())
+        theme()
         surface {
             modifier = Modifier
                 .fillMaxSize()
 
-            color = Color.Black
             contentColor = Color.Cyan
 
             isCentered = true

@@ -8,7 +8,7 @@ import org.b3.foundation.ui.view.View
 import org.b3.foundation.ui.view.ViewLayer
 
 class SurfaceLayer(
-    override val child: View,
+    override val children: List<View>,
     private val configuration: SurfaceConfiguration,
 ) : ViewLayer {
     @Composable

@@ -1,7 +1,6 @@
 package org.b3.foundation.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.b3.foundation.localization.Localization
@@ -11,6 +10,7 @@ import org.b3.foundation.ui.localization.LocalizationLayer
 import org.b3.foundation.ui.surface.SurfaceConfiguration
 import org.b3.foundation.ui.surface.SurfaceLayer
 import org.b3.foundation.ui.theme.MaterialThemeLayer
+import org.b3.foundation.ui.theme.ThemeConfiguration
 import org.b3.foundation.ui.view.View
 import org.b3.foundation.ui.view.ViewHierarchy
 
@@ -19,18 +19,23 @@ fun UiConfiguration.localization(language: LocalizationState? = null) =
         val service = UiApplication.getOrNull(Localization.key)
 
         LocalizationLayer(
-            child = child,
+            children = listOf(child),
             localization = language
                 ?: service?.language
                 ?: LocalizationState.Default,
         )
     }
 
-fun UiConfiguration.theme(colorScheme: ColorScheme) {
+fun UiConfiguration.theme(
+    configure: ThemeConfiguration.() -> Unit = {},
+) {
+    val configuration = ThemeConfiguration()
+        .apply(configure)
+
     layer(ViewHierarchy.THEME) { child ->
         MaterialThemeLayer(
-            child = child,
-            colorScheme = colorScheme,
+            children = listOf(child),
+            configuration = configuration,
         )
     }
 }
@@ -44,14 +49,14 @@ fun UiConfiguration.surface(
     layer(ViewHierarchy.SURFACE) { child ->
         val content = if (configuration.isCentered)
             BoxContainer(
-                child = child,
+                children = listOf(child),
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center,
             )
         else child
 
         SurfaceLayer(
-            child = content,
+            children = listOf(content),
             configuration = configuration,
         )
     }
