@@ -34,3 +34,7 @@ internal fun observeBrowserLifecycle(
     }
     """
 )
+
+@OptIn(ExperimentalWasmJsInterop::class)
+internal fun findViewportContainerId(): String? =
+    js("document.querySelector('[data-b3-viewport]')?.id || null")

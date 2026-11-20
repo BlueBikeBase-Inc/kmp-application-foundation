@@ -19,6 +19,9 @@ abstract class GenerateTemplateTask : DefaultTask() {
     abstract val language: Property<String>
 
     @get:Input
+    abstract val containerId: Property<String>
+
+    @get:Input
     abstract val entryScript: Property<String>
 
     @get:OutputDirectory
@@ -29,6 +32,7 @@ abstract class GenerateTemplateTask : DefaultTask() {
         val config = WebPageConfig(
             title = title.get(),
             language = language.get(),
+            containerId = containerId.get(),
             entryScript = entryScript.get(),
         )
 

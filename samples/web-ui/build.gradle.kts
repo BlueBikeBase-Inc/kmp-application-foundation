@@ -35,5 +35,6 @@ kotlin {
 
 b3Web {
     title.set("Web UI")
+    containerId.set("ui-root")
     entryScript.set(webEntryScript)
 }

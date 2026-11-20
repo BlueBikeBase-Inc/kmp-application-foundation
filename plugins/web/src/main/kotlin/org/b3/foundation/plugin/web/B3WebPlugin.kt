@@ -25,6 +25,7 @@ class B3WebPlugin : Plugin<Project> {
 
             task.title.set(extension.title)
             task.language.set(extension.language)
+            task.containerId.set(extension.containerId)
             task.entryScript.set(extension.entryScript)
 
             task.outputDirectory.set(
