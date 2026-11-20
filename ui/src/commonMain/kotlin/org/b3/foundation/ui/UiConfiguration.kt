@@ -21,7 +21,7 @@ class UiConfiguration {
         }
 
         check(hierarchy !in layers) {
-            "View layer '$hierarchy' is already configured'"
+            "View layer '$hierarchy' is already configured"
         }
 
         layers[hierarchy] = factory
@@ -29,7 +29,7 @@ class UiConfiguration {
 
     internal fun createView(): View {
         val view = checkNotNull(viewFactory) {
-            "View tree is not Configured"
+            "View tree is not configured"
         }.invoke()
 
         return layers.entries
