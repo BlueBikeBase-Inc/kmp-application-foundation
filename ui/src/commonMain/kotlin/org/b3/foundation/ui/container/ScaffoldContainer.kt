@@ -11,6 +11,7 @@ class ScaffoldContainer(
     val topBar: View,
     val bottomBar: View,
     val body: View,
+    private val modifier: Modifier = Modifier,
 ) : Container() {
     override val children: List<View> = listOf(topBar, bottomBar, body)
 
@@ -22,6 +23,7 @@ class ScaffoldContainer(
     @Composable
     override fun Apply(content: @Composable (() -> Unit)) {
         Scaffold(
+            modifier = modifier,
             topBar = { topBar.onRender() },
             bottomBar = { bottomBar.onRender() },
             content = { paddingValues ->
