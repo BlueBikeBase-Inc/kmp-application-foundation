@@ -32,7 +32,7 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
 
-            api(project(":core"))
+            api(project(":feature:localization"))
         }
         jvmMain.dependencies {
             implementation(compose.desktop.common)

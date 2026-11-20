@@ -6,7 +6,7 @@ import org.b3.foundation.ui.view.View
 
 object UiApplication : Application() {
     val view: View
-        get() = checkNotNull(rootView) { "UI is not configured" }
+        get() = checkNotNull(getOrNull(UI.key)) { "UI is not configured" }
 
     @Composable
     fun Content() {
@@ -32,12 +32,4 @@ object UiApplication : Application() {
         super.onDestroy()
         println("org.b3.foundation.ui.UiApplication.onDestroy()")
     }
-
-    internal fun attach(view: View) {
-        check(rootView == null) { "UI is already configured" }
-
-        rootView = view
-    }
-
-    private var rootView: View? = null
 }

@@ -19,14 +19,13 @@ abstract class Application : Lifecycle {
         println("org.b3.foundation.application.Application.onDestroy()")
     }
 
-    fun <T : Any> attach(
+    fun <T : Any> register(
         key: FeatureKey<T>,
         instance: T,
     ) {
-        registry.attach(key, instance)
+        registry.register(key, instance)
     }
 
-    @Suppress("UNCHECKED_CAST")
     fun <T : Any> get(key: FeatureKey<T>): T = registry.get(key)
     fun <T : Any> getOrNull(key: FeatureKey<T>): T? = registry.getOrNull(key)
 

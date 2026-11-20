@@ -25,6 +25,7 @@ rootProject.name = "foundation"
 include(
     ":core",
     ":ui",
+    ":feature:localization",
 
     ":samples:web-ui",
     ":samples:desktop-ui",

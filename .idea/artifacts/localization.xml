@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="localization">
+    <output-path>$PROJECT_DIR$/feature/localization/build/libs</output-path>
+    <root id="archive" name="localization.jar">
+      <element id="module-output" name="foundation.feature.localization.androidMain" />
+    </root>
+  </artifact>
+</component>

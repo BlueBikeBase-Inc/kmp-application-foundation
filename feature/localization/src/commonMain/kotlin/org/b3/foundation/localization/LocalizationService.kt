@@ -1,4 +1,4 @@
-package org.b3.foundation.configuration
+package org.b3.foundation.localization
 
 class LocalizationService(
     val language: LocalizationState,

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="localization-jvm">
+    <output-path>$PROJECT_DIR$/feature/localization/build/libs</output-path>
+    <root id="archive" name="localization-jvm.jar">
+      <element id="module-output" name="foundation.feature.localization.jvmMain" />
+    </root>
+  </artifact>
+</component>
