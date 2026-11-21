@@ -8,7 +8,10 @@ dependencies {
     implementation(compose.material3)
     implementation(compose.desktop.currentOs)
 
+    implementation(libs.ktor.client.cio)
+
     implementation(project(":ui"))
+    implementation(project(":feature:http"))
 }
 
 compose.desktop {

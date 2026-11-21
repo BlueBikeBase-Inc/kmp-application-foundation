@@ -7,7 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import io.ktor.client.engine.cio.CIO
 import org.b3.foundation.application.install
+import org.b3.foundation.http.HTTP
 import org.b3.foundation.localization.Localization
 import org.b3.foundation.localization.LocalizationState
 import org.b3.foundation.ui.*
@@ -25,6 +27,11 @@ fun main(args: Array<String>) {
 
 fun UiApplication.configureView() {
     install(Localization)
+    install(HTTP) {
+        client(CIO) {
+            engine {  }
+        }
+    }
 
     install(UI) {
         localization(language = LocalizationState.JA)
