@@ -1,11 +1,13 @@
 package org.b3.foundation.samples.wasm
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import io.ktor.client.engine.js.*
 import org.b3.foundation.application.install
@@ -55,6 +57,7 @@ fun UiApplication.configureView() {
                 return BoxContainer(
                     children = listOf(child),
                     modifier = Modifier
+                        .background(Color.Cyan)
                         .fillMaxSize()
                         .padding(16.dp),
                     contentAlignment = Alignment.Center,
@@ -70,7 +73,7 @@ fun UiApplication.configureView() {
                 children = listOf(textView("$content BottomBar")),
             )
             val body = BoxContainer(
-                children = listOf(textView(content)),
+                children = listOf(textView("$content Body")),
             )
 
             ScaffoldContainer(

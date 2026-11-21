@@ -6,4 +6,5 @@ enum class LifecycleState {
     STARTED,
     STOPPED,
     DESTROYED,
+    FAILED,
 }
