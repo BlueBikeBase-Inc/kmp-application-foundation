@@ -28,7 +28,10 @@ kotlin {
             implementation(compose.material3)
             implementation(compose.ui)
 
+            implementation(libs.ktor.client.js)
+
             implementation(project(":ui"))
+            implementation(project(":feature:http"))
         }
     }
 }

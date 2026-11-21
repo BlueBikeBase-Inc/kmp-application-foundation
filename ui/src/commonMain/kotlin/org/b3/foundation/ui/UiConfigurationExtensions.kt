@@ -3,6 +3,7 @@ package org.b3.foundation.ui
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import org.b3.foundation.annotation.B3Dsl
 import org.b3.foundation.localization.Localization
 import org.b3.foundation.localization.LocalizationState
 import org.b3.foundation.ui.container.BoxContainer
@@ -27,7 +28,7 @@ fun UiConfiguration.localization(language: LocalizationState? = null) =
     }
 
 fun UiConfiguration.theme(
-    configure: ThemeConfiguration.() -> Unit = {},
+    configure: @B3Dsl ThemeConfiguration.() -> Unit = {},
 ) {
     val configuration = ThemeConfiguration()
         .apply(configure)
@@ -41,7 +42,7 @@ fun UiConfiguration.theme(
 }
 
 fun UiConfiguration.surface(
-    configure: SurfaceConfiguration.() -> Unit = {},
+    configure: @B3Dsl SurfaceConfiguration.() -> Unit = {},
 ) {
     val configuration = SurfaceConfiguration()
         .apply(configure)

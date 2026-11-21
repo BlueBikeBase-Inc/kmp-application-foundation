@@ -11,6 +11,8 @@ androidxActivity = "1.13.0"
 jetbrainsCompose = "1.12.0"
 androidKmp = "9.5.0"
 
+io_ktor = "3.6.1"
+
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
@@ -20,6 +22,43 @@ kotlinx-browswer = { group = "org.jetbrains.kotlinx", name = "kotlinx-browser", 
 kotlinx-html = { group = "org.jetbrains.kotlinx", name = "kotlinx-html", version.ref = "kotlinxHtmlWasmJs" }
 
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
+
+# Ktor - Client Core
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "io_ktor" }
+
+# Ktor - Client Engines
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "io_ktor" }
+ktor-client-java = { group = "io.ktor", name = "ktor-client-java", version.ref = "io_ktor" }
+ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "io_ktor" }
+ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "io_ktor" }
+ktor-client-js = { group = "io.ktor", name = "ktor-client-js", version.ref = "io_ktor" }
+
+# Ktor - Client Plugins
+ktor-client-auth = { group = "io.ktor", name = "ktor-client-auth", version.ref = "io_ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "io_ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "io_ktor" }
+ktor-client-websockets = { group = "io.ktor", name = "ktor-client-websockets", version.ref = "io_ktor" }
+ktor-client-mock = { group = "io.ktor", name = "ktor-client-mock", version.ref = "io_ktor" }
+
+# Ktor - Server Core
+ktor-server-core = { group = "io.ktor", name = "ktor-server-core", version.ref = "io_ktor" }
+
+# Ktor - Server Engines
+ktor-server-cio = { group = "io.ktor", name = "ktor-server-cio", version.ref = "io_ktor" }
+ktor-server-netty = { group = "io.ktor", name = "ktor-server-netty", version.ref = "io_ktor" }
+
+# Ktor - Server Plugins
+ktor-server-auth = { group = "io.ktor", name = "ktor-server-auth", version.ref = "io_ktor" }
+ktor-server-auth-jwt = { group = "io.ktor", name = "ktor-server-auth-jwt", version.ref = "io_ktor" }
+ktor-server-content-negotiation = { group = "io.ktor", name = "ktor-server-content-negotiation", version.ref = "io_ktor" }
+ktor-server-cors = { group = "io.ktor", name = "ktor-server-cors", version.ref = "io_ktor" }
+ktor-server-status-pages = { group = "io.ktor", name = "ktor-server-status-pages", version.ref = "io_ktor" }
+ktor-server-call-logging = { group = "io.ktor", name = "ktor-server-call-logging", version.ref = "io_ktor" }
+ktor-server-websockets = { group = "io.ktor", name = "ktor-server-websockets", version.ref = "io_ktor" }
+ktor-server-test-host = { group = "io.ktor", name = "ktor-server-test-host", version.ref = "io_ktor" }
+
+# Ktor - Serialization
+ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "io_ktor" }
 
 [bundles]
 kotlinx-ecosystem = ["kotlinx-datetime", "kotlinx-serialization", "kotlinx-coroutines", "kotlinx-browswer", "kotlinx-html"]

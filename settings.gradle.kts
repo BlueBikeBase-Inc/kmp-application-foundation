@@ -25,10 +25,13 @@ rootProject.name = "foundation"
 include(
     ":core",
     ":ui",
+    ":server",
     ":feature:localization",
     ":feature:logging",
+    ":feature:http",
 
     ":samples:web-ui",
     ":samples:desktop-ui",
     ":samples:android",
+    ":samples:http-server",
 )

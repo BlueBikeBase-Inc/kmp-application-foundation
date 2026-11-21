@@ -29,5 +29,5 @@ abstract class Application : Lifecycle {
     fun <T : Any> get(key: FeatureKey<T>): T = registry.get(key)
     fun <T : Any> getOrNull(key: FeatureKey<T>): T? = registry.getOrNull(key)
 
-    private val registry = FeatureRegistry()
+    private val registry: FeatureRegistry = FeatureRegistry()
 }
