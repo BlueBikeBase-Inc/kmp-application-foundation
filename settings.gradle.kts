@@ -26,6 +26,7 @@ include(
     ":core",
     ":ui",
     ":feature:localization",
+    ":feature:logging",
 
     ":samples:web-ui",
     ":samples:desktop-ui",

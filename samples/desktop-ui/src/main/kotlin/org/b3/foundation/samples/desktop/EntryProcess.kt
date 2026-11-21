@@ -31,7 +31,7 @@ fun UiApplication.configureView() {
         theme()
         surface {
             modifier = Modifier
-                .fillMaxSize()
+                //.fillMaxSize()
 
             isCentered = true
         }

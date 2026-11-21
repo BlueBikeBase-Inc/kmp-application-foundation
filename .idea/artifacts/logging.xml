@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="logging">
+    <output-path>$PROJECT_DIR$/feature/logging/build/libs</output-path>
+    <root id="archive" name="logging.jar" />
+  </artifact>
+</component>

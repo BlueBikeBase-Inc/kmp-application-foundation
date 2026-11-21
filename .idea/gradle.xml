@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/localization" />
+            <option value="$PROJECT_DIR$/feature/logging" />
             <option value="$PROJECT_DIR$/plugins/web" />
             <option value="$PROJECT_DIR$/samples" />
             <option value="$PROJECT_DIR$/samples/android" />
