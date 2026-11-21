@@ -1,6 +1,6 @@
 package org.b3.foundation.runtime
 
-class LifecycleOwner(
+class LifecycleController(
     private val lifecycle: Lifecycle,
 ) {
     var state: LifecycleState = LifecycleState.INITIALIZED

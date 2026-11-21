@@ -1,15 +1,15 @@
 package org.b3.foundation.server
 
-import org.b3.foundation.runtime.LifecycleOwner
+import org.b3.foundation.runtime.LifecycleController
 
 object ApplicationMain {
     fun main(args: Array<String>) {
-        val owner = LifecycleOwner(ServerApplication)
+        val controller = LifecycleController(ServerApplication)
 
         try {
-            owner.create()
+            controller.create()
         } finally {
-            owner.destroy()
+            controller.destroy()
         }
     }
 }

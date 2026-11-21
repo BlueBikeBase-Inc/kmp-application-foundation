@@ -2,14 +2,14 @@ package org.b3.foundation.ui.runtime
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.compose.LifecycleStartEffect
-import org.b3.foundation.runtime.LifecycleOwner
+import org.b3.foundation.runtime.LifecycleController
 
 @Composable
 fun BindLifecycle(
-    owner: LifecycleOwner,
+    controller: LifecycleController,
 ) {
-    LifecycleStartEffect(owner) {
-        owner.start()
-        onStopOrDispose { owner.stop() }
+    LifecycleStartEffect(controller) {
+        controller.start()
+        onStopOrDispose { controller.stop() }
     }
 }

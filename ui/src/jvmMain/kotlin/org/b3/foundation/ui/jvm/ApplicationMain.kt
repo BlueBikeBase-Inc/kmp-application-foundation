@@ -4,17 +4,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import org.b3.foundation.runtime.LifecycleOwner
+import org.b3.foundation.runtime.LifecycleController
 import org.b3.foundation.ui.UiApplication
 import org.b3.foundation.ui.runtime.BindLifecycle
 
 object ApplicationMain {
     @JvmStatic
     fun main(args: Array<String>) {
-        val owner = LifecycleOwner(UiApplication)
+        val controller = LifecycleController(UiApplication)
 
         try {
-            owner.create()
+            controller.create()
 
             application(exitProcessOnExit = false) {
                 Window(
@@ -25,13 +25,13 @@ object ApplicationMain {
                         height = 800.dp,
                     ),
                     content = {
-                        BindLifecycle(owner)
+                        BindLifecycle(controller)
                         UiApplication.Content()
                     },
                 )
             }
         } finally {
-            owner.destroy()
+            controller.destroy()
         }
     }
 }
