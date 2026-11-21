@@ -8,7 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import io.ktor.client.engine.js.*
-import org.b3.foundation.application.apply
+import org.b3.foundation.application.install
 import org.b3.foundation.http.HTTP
 import org.b3.foundation.localization.Localization
 import org.b3.foundation.localization.LocalizationState
@@ -26,14 +26,14 @@ fun main() {
 }
 
 fun UiApplication.configureView() {
-    apply(Localization)
-    apply(HTTP) {
+    install(Localization)
+    install(HTTP) {
         client(Js) {
             engine {
             }
         }
     }
-    apply(UI) {
+    install(UI) {
         localization(language = LocalizationState.JA)
         theme { }
         surface {
