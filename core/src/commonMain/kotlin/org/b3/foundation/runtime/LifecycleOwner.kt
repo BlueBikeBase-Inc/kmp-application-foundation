@@ -1,7 +1,7 @@
 package org.b3.foundation.runtime
 
-class LifecycleController(
-    private val application: Lifecycle,
+class LifecycleOwner(
+    private val lifecycle: Lifecycle,
 ) {
     var state: LifecycleState = LifecycleState.INITIALIZED
         private set
@@ -9,20 +9,20 @@ class LifecycleController(
     fun create() {
         check(state == LifecycleState.INITIALIZED)
 
-        application.onCreate()
+        lifecycle.onCreate()
         state = LifecycleState.CREATED
     }
 
     fun start() {
         if (state == LifecycleState.CREATED || state == LifecycleState.STOPPED) {
-            application.onStart()
+            lifecycle.onStart()
             state = LifecycleState.STARTED
         }
     }
 
     fun stop() {
         if (state == LifecycleState.STARTED) {
-            application.onStop()
+            lifecycle.onStop()
             state = LifecycleState.STOPPED
         }
     }
@@ -37,7 +37,7 @@ class LifecycleController(
         } finally {
             try {
                 if (wasCreated) {
-                    application.onDestroy()
+                    lifecycle.onDestroy()
                 }
             } finally {
                 state = LifecycleState.DESTROYED

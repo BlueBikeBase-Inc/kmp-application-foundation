@@ -5,18 +5,28 @@ import org.b3.foundation.runtime.Lifecycle
 abstract class Application : Lifecycle {
     override fun onCreate() {
         println("org.b3.foundation.application.Application.onCreate()")
+        registry.participants
+            .forEach { participant -> participant.onApplicationCreated() }
     }
 
     override fun onStart() {
         println("org.b3.foundation.application.Application.onStart()")
+        registry.participants
+            .forEach { participant -> participant.onApplicationStarted() }
     }
 
     override fun onStop() {
         println("org.b3.foundation.application.Application.onStop()")
+        registry.participants
+            .asReversed()
+            .forEach { participant -> participant.onApplicationStopped() }
     }
 
     override fun onDestroy() {
         println("org.b3.foundation.application.Application.onDestroy()")
+        registry.participants
+            .asReversed()
+            .forEach { participant -> participant.onApplicationDestroyed() }
     }
 
     fun <T : Any> register(

@@ -1,6 +1,10 @@
 package org.b3.foundation.application
 
 internal class FeatureRegistry {
+    val participants: List<ApplicationLifecycleParticipant>
+        get() = entries.values
+            .filterIsInstance<ApplicationLifecycleParticipant>()
+
     fun <T : Any> register(
         key: FeatureKey<T>,
         instance: T,
@@ -20,5 +24,5 @@ internal class FeatureRegistry {
     fun <T : Any> getOrNull(key: FeatureKey<T>): T? =
         entries[key] as T?
 
-    private val entries = mutableMapOf<FeatureKey<*>, Any>()
+    private val entries: MutableMap<FeatureKey<*>, Any> = linkedMapOf()
 }

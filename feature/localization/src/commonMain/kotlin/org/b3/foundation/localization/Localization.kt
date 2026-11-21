@@ -11,12 +11,11 @@ object Localization : Feature<Application, LocalizationConfiguration, Localizati
     override fun configuration(): LocalizationConfiguration =
         LocalizationConfiguration()
 
-    override fun adapt(application: Application, configuration: LocalizationConfiguration) {
+    override fun adapt(application: Application, configuration: LocalizationConfiguration) =
         application.register(
             key = key,
             instance = LocalizationService(
                 language = configuration.language,
             ),
         )
-    }
 }
